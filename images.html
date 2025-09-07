@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .image-container { display: inline-block; margin: 10px; text-align: center; }
+        canvas { border: 1px solid #ccc; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Portfolio Images</h2>
+    <p>Right-click on each image and "Save image as" to download them to your portfolio folder.</p>
+    
+    <div class="image-container">
+        <h3>Profile Image</h3>
+        <canvas id="profile" width="300" height="300"></canvas>
+        <br>Save as: profile-image.jpg
+    </div>
+    
+    <div class="image-container">
+        <h3>Athletics Image</h3>
+        <canvas id="athletics" width="400" height="300"></canvas>
+        <br>Save as: athletics.jpg
+    </div>
+    
+    <div class="image-container">
+        <h3>Football Image</h3>
+        <canvas id="football" width="400" height="300"></canvas>
+        <br>Save as: football.jpg
+    </div>
+    
+    <div class="image-container">
+        <h3>Volleyball Image</h3>
+        <canvas id="volleyball" width="400" height="300"></canvas>
+        <br>Save as: volleyball.jpg
+    </div>
+    
+    <div class="image-container">
+        <h3>Trophy Image</h3>
+        <canvas id="trophy" width="400" height="300"></canvas>
+        <br>Save as: trophy.jpg
+    </div>
+
+    <script>
+        // Profile Image
+        const profileCanvas = document.getElementById('profile');
+        const profileCtx = profileCanvas.getContext('2d');
+        
+        // Create gradient background
+        const gradient = profileCtx.createLinearGradient(0, 0, 300, 300);
+        gradient.addColorStop(0, '#667eea');
+        gradient.addColorStop(1, '#764ba2');
+        profileCtx.fillStyle = gradient;
+        profileCtx.fillRect(0, 0, 300, 300);
+        
+        // Add text
+        profileCtx.fillStyle = 'white';
+        profileCtx.font = 'bold 24px Arial';
+        profileCtx.textAlign = 'center';
+        profileCtx.fillText('MS', 150, 140);
+        profileCtx.font = '16px Arial';
+        profileCtx.fillText('Profile Photo', 150, 170);
+        profileCtx.font = '14px Arial';
+        profileCtx.fillText('Muhammed Shahran', 150, 190);
+
+        // Athletics Image
+        const athleticsCanvas = document.getElementById('athletics');
+        const athleticsCtx = athleticsCanvas.getContext('2d');
+        
+        const athleticsGradient = athleticsCtx.createLinearGradient(0, 0, 400, 300);
+        athleticsGradient.addColorStop(0, '#4ade80');
+        athleticsGradient.addColorStop(1, '#22c55e');
+        athleticsCtx.fillStyle = athleticsGradient;
+        athleticsCtx.fillRect(0, 0, 400, 300);
+        
+        // Draw running track
+        athleticsCtx.strokeStyle = 'white';
+        athleticsCtx.lineWidth = 3;
+        athleticsCtx.beginPath();
+        athleticsCtx.ellipse(200, 150, 80, 50, 0, 0, 2 * Math.PI);
+        athleticsCtx.stroke();
+        
+        // Add text
+        athleticsCtx.fillStyle = 'white';
+        athleticsCtx.font = 'bold 28px Arial';
+        athleticsCtx.textAlign = 'center';
+        athleticsCtx.fillText('🏃‍♂️ ATHLETICS', 200, 100);
+        athleticsCtx.font = '16px Arial';
+        athleticsCtx.fillText('Track & Field', 200, 250);
+
+        // Football Image
+        const footballCanvas = document.getElementById('football');
+        const footballCtx = footballCanvas.getContext('2d');
+        
+        const footballGradient = footballCtx.createLinearGradient(0, 0, 400, 300);
+        footballGradient.addColorStop(0, '#3b82f6');
+        footballGradient.addColorStop(1, '#1d4ed8');
+        footballCtx.fillStyle = footballGradient;
+        footballCtx.fillRect(0, 0, 400, 300);
+        
+        // Draw football field
+        footballCtx.strokeStyle = 'white';
+        footballCtx.lineWidth = 2;
+        footballCtx.strokeRect(50, 75, 300, 150);
+        footballCtx.beginPath();
+        footballCtx.moveTo(200, 75);
+        footballCtx.lineTo(200, 225);
+        footballCtx.stroke();
+        
+        // Add text
+        footballCtx.fillStyle = 'white';
+        footballCtx.font = 'bold 28px Arial';
+        footballCtx.textAlign = 'center';
+        footballCtx.fillText('⚽ FOOTBALL', 200, 60);
+        footballCtx.font = '16px Arial';
+        footballCtx.fillText('Team Player', 200, 250);
+
+        // Volleyball Image
+        const volleyballCanvas = document.getElementById('volleyball');
+        const volleyballCtx = volleyballCanvas.getContext('2d');
+        
+        const volleyballGradient = volleyballCtx.createLinearGradient(0, 0, 400, 300);
+        volleyballGradient.addColorStop(0, '#f59e0b');
+        volleyballGradient.addColorStop(1, '#d97706');
+        volleyballCtx.fillStyle = volleyballGradient;
+        volleyballCtx.fillRect(0, 0, 400, 300);
+        
+        // Draw volleyball net
+        volleyballCtx.strokeStyle = 'white';
+        volleyballCtx.lineWidth = 3;
+        volleyballCtx.beginPath();
+        volleyballCtx.moveTo(200, 50);
+        volleyballCtx.lineTo(200, 250);
+        volleyballCtx.stroke();
+        
+        // Add text
+        volleyballCtx.fillStyle = 'white';
+        volleyballCtx.font = 'bold 28px Arial';
+        volleyballCtx.textAlign = 'center';
+        volleyballCtx.fillText('🏐 VOLLEYBALL', 200, 100);
+        volleyballCtx.font = '16px Arial';
+        volleyballCtx.fillText('Team Sport', 200, 250);
+
+        // Trophy Image
+        const trophyCanvas = document.getElementById('trophy');
+        const trophyCtx = trophyCanvas.getContext('2d');
+        
+        const trophyGradient = trophyCtx.createLinearGradient(0, 0, 400, 300);
+        trophyGradient.addColorStop(0, '#fbbf24');
+        trophyGradient.addColorStop(1, '#f59e0b');
+        trophyCtx.fillStyle = trophyGradient;
+        trophyCtx.fillRect(0, 0, 400, 300);
+        
+        // Draw trophy
+        trophyCtx.fillStyle = '#fde047';
+        trophyCtx.beginPath();
+        trophyCtx.ellipse(200, 120, 30, 40, 0, 0, 2 * Math.PI);
+        trophyCtx.fill();
+        trophyCtx.fillRect(170, 160, 60, 20);
+        trophyCtx.fillRect(180, 180, 40, 40);
+        
+        // Add text
+        trophyCtx.fillStyle = 'white';
+        trophyCtx.font = 'bold 28px Arial';
+        trophyCtx.textAlign = 'center';
+        trophyCtx.fillText('🏆 ACHIEVEMENTS', 200, 80);
+        trophyCtx.font = '16px Arial';
+        trophyCtx.fillText('1st Place Winner', 200, 250);
+    </script>
+</body>
+</html> 
